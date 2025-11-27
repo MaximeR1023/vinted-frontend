@@ -1,0 +1,74 @@
+body {
+  background-color: #ebedee;
+}
+
+.receipt {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 28px;
+}
+
+.receipt-top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-bottom: 1px solid #ebedee;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+
+.receipt-top h1 {
+  all: unset;
+  color: gray;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.receipt-top h2 {
+  all: unset;
+  font-size: 22px;
+}
+
+.receipt-top > section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.receipt-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.receipt-bottom > section {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.receipt-bottom p {
+  font-size: 20px;
+}
+
+.receipt-bottom span {
+  font-weight: bold;
+}
+
+.receipt-bottom button {
+  all: unset;
+  height: 40px;
+  width: 160px;
+  background-color: #2cb1ba;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  justify-self: flex-end;
+  margin-top: 20px;
+}
+
+.receipt-bottom button:hover {
+  cursor: pointer;
+}

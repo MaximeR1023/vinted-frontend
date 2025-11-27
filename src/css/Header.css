@@ -1,0 +1,94 @@
+header {
+  background-color: white;
+  padding: 20px;
+}
+
+header > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  height: 40px;
+}
+
+.search > label {
+  position: relative;
+}
+
+.search > label > input {
+  all: unset;
+  background-color: #f5f6f7;
+  width: 650px;
+  height: 50px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding-left: 35px;
+}
+
+.search > label > input:hover {
+  cursor: text;
+}
+
+.search > label > input::placeholder {
+  color: lightgray;
+}
+
+.search > label > svg {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  color: lightgray;
+}
+
+.searchFilters {
+  display: flex;
+  gap: 40px;
+}
+
+.searchFilters > div {
+  display: flex;
+  gap: 10px;
+}
+
+menu,
+.account-actions {
+  display: flex;
+  align-items: center;
+}
+
+menu {
+  gap: 60px;
+}
+
+.account-actions {
+  gap: 20px;
+}
+
+menu button {
+  all: unset;
+  height: 40px;
+  width: 160px;
+  border: 1px solid #2cb1ba;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
+  color: #2cb1ba;
+}
+
+menu > button {
+  background-color: lightseagreen;
+  color: white;
+}
+
+menu button:hover {
+  cursor: pointer;
+}
+
+.disconnect {
+  border: none;
+  background-color: #c2185b;
+  color: white;
+}

@@ -1,0 +1,47 @@
+main > .container {
+  margin: 30px auto;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.offer {
+  width: 300px;
+  margin-bottom: 50px;
+  color: gray;
+}
+
+.nostyle {
+  all: unset;
+}
+
+.offer:hover {
+  cursor: pointer;
+}
+
+.offer-top {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.owner-avatar {
+  height: 30px;
+  border-radius: 50%;
+}
+
+.offer > img {
+  width: 235px;
+  height: 360px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.offer > p:first-of-type {
+  color: black;
+  font-size: 20px;
+}

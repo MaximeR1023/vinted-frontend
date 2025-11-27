@@ -1,0 +1,17 @@
+html,
+button {
+  font-family: "Be Vietnam Pro";
+}
+
+body {
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: auto;
+  width: 85%;
+}
