@@ -19,7 +19,7 @@
   background-color: white;
   max-height: 90vh;
   overflow-y: auto;
-  width: 40%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   padding: 40px;
@@ -36,7 +36,7 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 20px;
+  font-size: 12px;
   color: lightcoral;
 }
 
@@ -46,6 +46,7 @@
 
 .modal > h1 {
   margin-bottom: 30px;
+  font-size: 25px;
 }
 
 .modal > form {
@@ -57,7 +58,7 @@
 .modal > form > input {
   all: unset;
   padding: 10px 0;
-  font-size: 20px;
+  font-size: 12px;
   border-bottom: 1px solid red;
 }
 
@@ -69,17 +70,18 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .modal > form > .newsletter > input {
-  height: 30px;
-  width: 30px;
+  height: 15px;
+  width: 15px;
 }
 
 .modal > form > .terms-of-use {
   color: gray;
   margin-bottom: 50px;
+  font-size: 12px;
 }
 
 .modal > form > button {
@@ -87,8 +89,8 @@
   background-color: lightseagreen;
   text-align: center;
   color: white;
-  padding: 20px;
-  font-size: 25px;
+  padding: 10px;
+  font-size: 14px;
   border-radius: 5px;
 }
 
@@ -99,6 +101,7 @@
 .modal > form > .redirect {
   text-align: center;
   color: teal;
+  font-size: 14px;
 }
 
 .modal > form > .redirect {

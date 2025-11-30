@@ -1,13 +1,8 @@
 import "../css/Header.css";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import Cookies from "js-cookie";
-
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { FaSearch } from "react-icons/fa";
-
-import Home from "../pages/Home";
+import Cookies from "js-cookie";
 
 const Header = ({
   toggleLogin,
@@ -22,91 +17,66 @@ const Header = ({
   setSearchMinPrice,
   searchMaxPrice,
   setSearchMaxPrice,
+  token,
+  setToken,
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const token = Cookies.get("token");
-
   return (
     <header>
       <div className="container">
-        <Link
-          to="/"
-          onClick={() => {
-            setToggleSearchFilters(true);
-          }}
-        >
+        <Link to="/">
           <img src={logo} alt="Logo Vinted" />
         </Link>
         <section className="search">
-          {/* barre et filtres de recherche */}
           <label>
             <input
               type="text"
-              id="search"
               value={search}
               placeholder="Recherche des articles"
-              onChange={(event) => {
-                setSearch(event.target.value);
-              }}
+              onChange={(e) => setSearch(e.target.value)}
             />
             <FaSearch />
           </label>
+
           {location.pathname === "/" && (
             <article className="searchFilters">
               <div>
                 <p>Trier par prix : </p>
                 <input
                   type="checkbox"
-                  id="togglePriceSorting"
                   checked={togglePriceSorting}
-                  onChange={(event) => {
-                    setTogglePriceSorting(event.target.checked);
-                  }}
+                  onChange={(e) => setTogglePriceSorting(e.target.checked)}
                 />
               </div>
               <div>
                 <p>Prix entre : </p>
-                {/* Slider de prix */}
                 <input
                   type="text"
-                  id="searchMinPrice"
                   value={searchMinPrice || ""}
                   placeholder="0 €"
-                  onChange={(event) => {
-                    setSearchMinPrice(event.target.value);
-                  }}
+                  onChange={(e) => setSearchMinPrice(e.target.value)}
                 />
                 <input
                   type="text"
-                  id="searchMaxPrice"
                   value={searchMaxPrice || ""}
                   placeholder="500 €"
-                  onChange={(event) => {
-                    setSearchMaxPrice(event.target.value);
-                  }}
+                  onChange={(e) => setSearchMaxPrice(e.target.value)}
                 />
               </div>
             </article>
           )}
         </section>
+
         <menu>
           <div className="account-actions">
             {!token ? (
               <>
-                <button
-                  onClick={() => {
-                    setToggleSignup(!toggleSignup);
-                  }}
-                >
+                <button onClick={() => setToggleSignup(!toggleSignup)}>
                   S'inscrire
                 </button>
-                <button
-                  onClick={() => {
-                    setToggleLogin(!toggleLogin);
-                  }}
-                >
+                <button onClick={() => setToggleLogin(!toggleLogin)}>
                   Se connecter
                 </button>
               </>
@@ -115,6 +85,7 @@ const Header = ({
                 className="disconnect"
                 onClick={() => {
                   Cookies.remove("token");
+                  setToken(null);
                   navigate("/");
                 }}
               >
@@ -122,6 +93,7 @@ const Header = ({
               </button>
             )}
           </div>
+
           <button
             onClick={() => {
               !token ? setToggleSignup(true) : navigate("/publish");

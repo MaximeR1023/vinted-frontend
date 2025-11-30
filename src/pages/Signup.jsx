@@ -42,7 +42,8 @@ const Signup = ({ setToggleSignup, setToggleLogin, toggleSignup }) => {
         // console.log(response.data);
         if (response.data.token) {
           Cookies.set("token", response.data.token);
-          setToggleLogin(false);
+          setToggleSignup(false);
+          navigate("/");
         }
       })
       .catch((error) => {
@@ -55,7 +56,7 @@ const Signup = ({ setToggleSignup, setToggleLogin, toggleSignup }) => {
   return (
     <div
       className="modal-root"
-      onClick={() => {
+      onClick={(event) => {
         setToggleSignup(false);
       }}
     >

@@ -6,7 +6,13 @@ import Header from "../components/Header";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ setToggleLogin, setToggleSignup, toggleLogin }) => {
+const Login = ({
+  setToggleLogin,
+  setToggleSignup,
+  toggleLogin,
+  token,
+  setToken,
+}) => {
   useEffect(() => {
     if (toggleLogin) {
       document.body.classList.add("no-scroll");
@@ -39,7 +45,9 @@ const Login = ({ setToggleLogin, setToggleSignup, toggleLogin }) => {
         // console.log(response.data);
         if (response.data.token) {
           Cookies.set("token", response.data.token);
+          setToken(response.data.token);
           setToggleLogin(false);
+          navigate("/");
         }
       })
       .catch((error) => {
@@ -48,14 +56,6 @@ const Login = ({ setToggleLogin, setToggleSignup, toggleLogin }) => {
           : console.error(error);
       });
   };
-
-  // useEffect(() => {
-  //   document.body.style.overflow = "hidden";
-
-  //   return () => {
-  //     document.body.style.overflow = "unset";
-  //   };
-  // }, []);
 
   return (
     <div

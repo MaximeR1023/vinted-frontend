@@ -11,15 +11,14 @@ import Login from "./pages/Login";
 import Publish from "./pages/Publish";
 import Payment from "./pages/Payment";
 
-function App() {
+const App = () => {
   const [toggleLogin, setToggleLogin] = useState(false);
   const [toggleSignup, setToggleSignup] = useState(false);
   const [search, setSearch] = useState("");
   const [togglePriceSorting, setTogglePriceSorting] = useState(false);
   const [searchMinPrice, setSearchMinPrice] = useState();
   const [searchMaxPrice, setSearchMaxPrice] = useState();
-
-  let token = Cookies.get("token");
+  const [token, setToken] = useState(Cookies.get("token") || null);
 
   return (
     <Router>
@@ -36,6 +35,8 @@ function App() {
         setSearchMinPrice={setSearchMinPrice}
         searchMaxPrice={searchMaxPrice}
         setSearchMaxPrice={setSearchMaxPrice}
+        token={token}
+        setToken={setToken}
       />
       <Routes>
         <Route
@@ -69,6 +70,7 @@ function App() {
           setToggleSignup={setToggleSignup}
           setToggleLogin={setToggleLogin}
           toggleSignup={toggleSignup}
+          setToken={setToken}
         />
       )}
       {toggleLogin && (
@@ -76,10 +78,11 @@ function App() {
           setToggleLogin={setToggleLogin}
           setToggleSignup={setToggleSignup}
           toggleLogin={toggleLogin}
+          setToken={setToken}
         />
       )}
     </Router>
   );
-}
+};
 
 export default App;

@@ -11,20 +11,21 @@ header > div {
 }
 
 header img {
-  height: 40px;
+  height: 30px;
+  margin-right: 20px;
 }
 
 .search > label {
   position: relative;
+  font-size: 10px;
 }
 
 .search > label > input {
   all: unset;
   background-color: #f5f6f7;
-  width: 650px;
-  height: 50px;
+  width: 450px;
+  height: 30px;
   border-radius: 5px;
-  margin-bottom: 20px;
   padding-left: 35px;
 }
 
@@ -38,14 +39,20 @@ header img {
 
 .search > label > svg {
   position: absolute;
-  top: 4px;
+  top: 1px;
   left: 6px;
   color: lightgray;
 }
 
 .searchFilters {
   display: flex;
-  gap: 40px;
+  gap: 20px;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.searchFilters > div:nth-child(2) > input {
+  width: 70px;
 }
 
 .searchFilters > div {
@@ -69,11 +76,11 @@ menu {
 
 menu button {
   all: unset;
-  height: 40px;
-  width: 160px;
+  height: 30px;
+  width: 120px;
   border: 1px solid #2cb1ba;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 12px;
   text-align: center;
   color: #2cb1ba;
 }
